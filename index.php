@@ -3,17 +3,32 @@
    
 <input type="file" name="" id="file-input"  class="class1"  /><br />
 <div class="class2">Download</div>
-<input type="submit" value="Envoyer" id="submit-button" class="class3" />
+<input type="submit" value="Envoyer" id="submit-button" class="class3" onclick="disip()" />
 </form>
- 
-<div id="upload-progress" ></div>
+<div id="encours">Telechargement en cours </div>
 
+<script>
+function disip() 
+{
+    document.getElementById("submit-button").style.display="none"; 
+    document.getElementById("encours").style.display="block"; 
+}
+
+</script>
+<div id="upload-progress" ></div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="upload.js"></script>
 
 <a href="uploads/" class="class4"><div>Mes fichiers</div></a>
 
 <style>
+#encours
+{
+    display:none; 
+    font-size:2em; 
+    color:green ; 
+    text-shadow:1px 1px 1px black ; 
+}
 .class1,.class3,.class4 
 {
     position:absolute;
@@ -35,8 +50,12 @@ cursor:pointer ;
   font-family: 'Anton', sans-serif;
   color:white ; 
   border-radius:30px;
-
 } 
+#upload-progress 
+{
+    color:green ; 
+    font-size: 2em ; 
+}
 .class3 
 {
     top:150px;

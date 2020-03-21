@@ -40,11 +40,21 @@ $(function() {
                     var percent_done = Math.floor((size_done / file.size) * 100);
 
                     if (next_slice < file.size) {
+                         
                         $('#upload-progress').html('Uploading File - ' + percent_done + '%');
 
                         upload_file(next_slice); // s'il reste à lire, on appelle récursivement la fonction
                     } else {
                         $('#upload-progress').html('Upload Complete!');
+                        
+                       
+
+                        setTimeout(function(){ 
+                            document.location.reload(true);
+                        }, 800);
+                        
+
+
                     }
                 }
             });
